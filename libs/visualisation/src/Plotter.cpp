@@ -17,7 +17,7 @@
 
 #include "Plotter.h"
 #include "GL/freeglut.h"
-#include "eigen3/Eigen/Geometry"
+#include <Eigen/Geometry>
 #include <iostream>
 
 using namespace std;

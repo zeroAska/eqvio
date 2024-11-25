@@ -3,6 +3,8 @@
 if (EQVIO_BUILD_VISUALISATION)
 set(module visualisation)
 
+find_package(Eigen3 REQUIRED)
+
 set(EQVIO_MODULE_INCLUDE_DIRS "")
 set(EQVIO_MODULE_LIBS "")
 

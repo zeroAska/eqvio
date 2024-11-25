@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10)
 project(eqvio VERSION 1.1)
 set(CMAKE_CXX_STANDARD 20)
 
@@ -72,10 +72,11 @@ endif()
 
 
 # Import external dependencies
-find_package(Eigen3 3 REQUIRED)
+find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(yaml-cpp REQUIRED)
-
+message("Eigen3: ${EIGEN_INCLUDE_DIR},  ${EIGEN3_INCLUDE_DIR}")
+message("yaml cpp: ${YAML_CPP_INCLUDE_DIR},  ${YAML_CPP_INCLUDE_DIRS}")
 
 # Add GIFT
 find_package(GIFT QUIET)
@@ -266,7 +267,7 @@ set(EXECUTABLES_LIST
 foreach(EXECUTABLE_NAME ${EXECUTABLES_LIST})
     target_include_directories(${EXECUTABLE_NAME}
         PRIVATE include
-        PRIVATE ${EIGEN_INCLUDE_DIRS}
+        PRIVATE ${EIGEN3_INCLUDE_DIR}
         PRIVATE ${OpenCV_INCLUDE_DIRS}
         PRIVATE ${YAML_CPP_INCLUDE_DIR}
         PRIVATE ${LiePP_INCLUDE_DIRS}

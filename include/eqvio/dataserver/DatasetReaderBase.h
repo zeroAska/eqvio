@@ -21,8 +21,8 @@
 #include "eqvio/mathematical/VIOState.h"
 #include "eqvio/mathematical/VisionMeasurement.h"
 
-#include "opencv4/opencv2/core.hpp"
-#include "opencv4/opencv2/highgui.hpp"
+#include "opencv2/core.hpp"
+#include "opencv2/highgui.hpp"
 #include "yaml-cpp/yaml.h"
 
 /** @brief The possible measurement types encountered in a VIO dataset */

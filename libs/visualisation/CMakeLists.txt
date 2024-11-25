@@ -2,7 +2,9 @@ find_package(GLUT REQUIRED)
 find_package(Threads REQUIRED)
 set(OpenGL_GL_PREFERENCE LEGACY)
 find_package(OpenGL REQUIRED)
-
+find_package(Eigen3 REQUIRED)
+message("Eigen3 path: ${EIGEN3_INCLUDE_DIR}")
+message("GLUT path: ${GLUT_INCLUDE_DIR}")
 set(eqviolib_visualisation_SOURCE_FILES
     src/Plotter.cpp
 )
@@ -19,13 +21,13 @@ add_library(eqviolib_visualisation
 
 target_include_directories(eqviolib_visualisation
     PRIVATE include
-    PRIVATE ${EIGEN_INCLUDE_DIRS}
+    PRIVATE ${EIGEN3_INCLUDE_DIR}
     PRIVATE ${GLUT_INCLUDE_DIRS}
     PRIVATE ${OPENGL_INCLUDE_DIR}
 )
 
 target_link_libraries(eqviolib_visualisation
-    ${GLUT_LIBRARY}
+	${GLUT_LIBRARIES}
     ${OPENGL_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
 )
